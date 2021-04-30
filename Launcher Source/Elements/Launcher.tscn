@@ -1,0 +1,230 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Elements/Game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elements/Carousel.gd" type="Script" id=2]
+[ext_resource path="res://Placeholder Assets/Images/square_cover.png" type="Texture" id=3]
+[ext_resource path="res://Placeholder Assets/Images/tall_cover.png" type="Texture" id=4]
+[ext_resource path="res://Placeholder Assets/Images/tiny_cover.png" type="Texture" id=5]
+[ext_resource path="res://Placeholder Assets/Images/weird_cover.png" type="Texture" id=6]
+[ext_resource path="res://Placeholder Assets/Images/wide_cover.png" type="Texture" id=7]
+[ext_resource path="res://Placeholder Assets/Fonts/SpaceMono-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Placeholder Assets/Fonts/SpaceMono-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Elements/Instructions.gd" type="Script" id=16]
+[ext_resource path="res://Elements/UI Sounds/cursor_0.wav" type="AudioStream" id=17]
+[ext_resource path="res://Placeholder Assets/Images/background.png" type="Texture" id=18]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 3
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -4
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -4
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 42
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -15
+font_data = ExtResource( 8 )
+
+[node name="Launcher" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -109.407, -425.736 )
+z_index = -2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_left = -880.0
+margin_top = -176.0
+margin_right = 3075.0
+margin_bottom = 2267.0
+texture = ExtResource( 18 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EffectOverlay1" type="ColorRect" parent="Background"]
+material = SubResource( 1 )
+margin_left = -2042.77
+margin_top = -990.695
+margin_right = 4730.23
+margin_bottom = 2524.31
+color = Color( 1, 0.34902, 0.0980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+
+[node name="Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -19.19
+
+[node name="Carousel" type="YSort" parent="."]
+position = Vector2( 960, 675 )
+script = ExtResource( 2 )
+min_scale = 0.5
+max_scale = 1.0
+move_sound = NodePath("../Move")
+exit_popup = NodePath("../Exit Popup")
+far_tint = Color( 1, 0.462745, 0.25098, 1 )
+unselected_tint = Color( 1, 0.898039, 0.858824, 1 )
+
+[node name="Game1" parent="Carousel" instance=ExtResource( 1 )]
+game_name = "Square Pdf"
+author_name = "square lover"
+Cover = ExtResource( 3 )
+game_type = 2
+file_to_run = "example pdf file.pdf"
+
+[node name="Game2" parent="Carousel" instance=ExtResource( 1 )]
+game_name = "Tall nothing"
+author_name = "tallboi"
+Cover = ExtResource( 4 )
+
+[node name="Game3" parent="Carousel" instance=ExtResource( 1 )]
+game_name = "low res exe"
+author_name = "pixelface"
+Cover = ExtResource( 5 )
+game_type = 1
+file_to_run = "A folder\\\\Folder inside a folder\\\\TEXTREME.exe"
+
+[node name="Game4" parent="Carousel" instance=ExtResource( 1 )]
+game_name = "wacky ROM"
+author_name = "old school cool"
+Cover = ExtResource( 6 )
+game_type = 3
+file_to_run = "A folder\\\\Folder inside a folder\\\\yo-grl\\\\yo-grl.gb"
+
+[node name="Game5" parent="Carousel" instance=ExtResource( 1 )]
+game_name = "wide video"
+author_name = "wise wide man"
+Cover = ExtResource( 7 )
+game_type = 2
+file_to_run = "A folder\\\\example_video.mp4"
+
+[node name="Controls" type="Label" parent="."]
+margin_left = 21.3816
+margin_top = 19.5998
+margin_right = 561.382
+margin_bottom = 574.6
+rect_scale = Vector2( 1, 0.998985 )
+custom_fonts/font = SubResource( 2 )
+text = "Select game with:
+A D
+Arrows
+D-pad
+
+Open and launch game with:
+Space
+Enter
+(A)
+
+Go back or quit launcher with:
+Esc
+(B)
+
+Hide this information with:
+Tab
+(Y)
+"
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pop" type="AudioStreamPlayer" parent="Controls"]
+stream = ExtResource( 17 )
+volume_db = -13.619
+pitch_scale = 2.07
+
+[node name="Exit Popup" type="ColorRect" parent="."]
+visible = false
+margin_left = 605.52
+margin_top = 346.734
+margin_right = 1348.52
+margin_bottom = 804.734
+color = Color( 0, 0.0862745, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Exit Popup"]
+margin_left = 44.2246
+margin_top = 194.497
+margin_right = 346.225
+margin_bottom = 425.497
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Exit Popup"]
+margin_left = 402.897
+margin_top = 198.272
+margin_right = 704.897
+margin_bottom = 429.272
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="Instructions2" type="Label" parent="Exit Popup"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -328.958
+margin_top = 1.06152
+margin_right = 334.042
+margin_bottom = 283.062
+rect_scale = Vector2( 1, 0.998985 )
+custom_fonts/font = SubResource( 3 )
+text = "Are you sure you 
+want to quit?
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="option1" type="Label" parent="Exit Popup"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -311.5
+margin_top = 205.297
+margin_right = -167.5
+margin_bottom = 410.297
+rect_scale = Vector2( 1, 0.998985 )
+custom_fonts/font = SubResource( 4 )
+text = "Quit
+
+Space
+(A)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="option2" type="Label" parent="Exit Popup"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 52.1776
+margin_top = 211.176
+margin_right = 234.178
+margin_bottom = 416.176
+rect_scale = Vector2( 1, 0.998985 )
+custom_fonts/font = SubResource( 4 )
+text = "Go Back
+
+Esc
+(B)"
+__meta__ = {
+"_edit_use_anchors_": false
+}

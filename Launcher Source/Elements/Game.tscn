@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Elements/Game.gd" type="Script" id=2]
+[ext_resource path="res://Placeholder Assets/Fonts/SpaceMono-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Placeholder Assets/Fonts/SpaceMono-Italic.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Elements/UI Sounds/launch_1.wav" type="AudioStream" id=6]
+[ext_resource path="res://Elements/UI Sounds/exit_1.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = -7
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextInfo" type="Node2D" parent="."]
+position = Vector2( 0, -4.49493 )
+
+[node name="GameName" type="Label" parent="TextInfo"]
+margin_left = -163.336
+margin_top = -669.287
+margin_right = 151.664
+margin_bottom = -584.287
+grow_horizontal = 2
+grow_vertical = 0
+rect_pivot_offset = Vector2( -1.34985, 72.0301 )
+custom_fonts/font = SubResource( 1 )
+text = "Game name"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExtraInfo" type="Label" parent="TextInfo"]
+margin_left = -132.336
+margin_top = -587.287
+margin_right = 130.664
+margin_bottom = -498.287
+grow_horizontal = 2
+rect_pivot_offset = Vector2( -1.34985, 72.0301 )
+custom_fonts/font = SubResource( 2 )
+text = "by Author name
+a windows executable"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visuals" type="Node2D" parent="."]
+position = Vector2( 0, 99.5895 )
+scale = Vector2( 1.3, 1.3 )
+
+[node name="page" type="Sprite" parent="visuals"]
+position = Vector2( 0.769653, -243.309 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="icon" type="Sprite" parent="visuals"]
+visible = false
+position = Vector2( 0, -227 )
+scale = Vector2( 5, 7.07 )
+texture = ExtResource( 1 )
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.476
+
+[node name="Failure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -18.188
