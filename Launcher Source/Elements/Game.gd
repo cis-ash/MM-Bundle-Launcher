@@ -8,7 +8,7 @@ export (String) var game_name
 export (String) var author_name
 export (Texture) var Cover;
 export (int, "keep rotation", "rotate clockwise", "rotate counter clockwise") var rotate
-export (int, "no file", "windows exe", "pdf/html/other file", "gameboy rom") var game_type
+export (int, "no file", "windows exe", "link/pdf/html/other file", "gameboy rom") var game_type
 export (String) var file_to_run;
 var was_prepared = false
 var prepared = false
