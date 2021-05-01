@@ -32,9 +32,11 @@ Things listed above can be added or changed if you are ready to tweak the source
 ## FAQ
 
 Q: Some/all projects I want to run were made in an engine other than Godot, will it still run?
+
 A: Yes, absolutely.
 
 Q: Do I have to know how to code to use this with my project?
+
 A: Absolutely not, you can change it to fit your project by just drag&dropping files.
 
 -------
@@ -116,9 +118,9 @@ Launcher Example
 | What the launcher will do                      | `File To Run` variable                                 | `Game Type` variable     |
 | ---------------------------------------------- | ------------------------------------------------------ | ------------------------ |
 | open `example pdf file.pdf`                    | example pdf file.pdf                                   | link/pdf/html/other file |
-| open `example_video.mp4                        | A folder\\\example_video.mp4                           | link/pdf/html/other file |
+| open `example_video.mp4`                       | A folder\\\example_video.mp4                           | link/pdf/html/other file |
 | run `TEXTREME.exe`                             | A folder\\\Folder inside a folder\\\TEXTREME.exe       | windows exe              |
-| run `yo-grl.gb` in a Gameboy emulator          | A folder\\\Folder inside a folder\\\yo-grl\\\yo-grl.gb | Gameboy rom              |
+| run `yo-grl.gb` in a Gameboy emulator          | A folder\\\Folder inside a folder\\\yo-grl\\\yo-grl.gb | gameboy rom              |
 | open `Folder insdie a folder` in file explorer | A folder\\\Folder inside a folder                      | link/pdf/html/other file |
 | open `itch.io` in browser                      | https://itch.io                                        | link/pdf/html/other file |
 
@@ -134,7 +136,8 @@ Make sure to drop the fonts you want to use into the project folder in `.otf` or
 
 #### Game title
 
-Open `Game.tscn`, find the `TextInfo > GameName` node. In the inspector scroll down until you see the `Custom Fonts` tab. Inside you will find a font resource, click on it. You should now see this. Drag and drop your new font into `Font Data` and change other variables until you are satisfied. You can change the color of the letters in the `Custom Colors` tab belowr
+Open `Game.tscn`, find the `TextInfo > GameName` node. In the inspector scroll down until you see the `Custom Fonts` tab. Inside you will find a font resource, click on it. You should now see this. Drag and drop your new font into `Font Data` and change other variables until you are satisfied. You can change the color of the letters in the `Custom Colors` tab below.
+
 ![](https://cdn.discordapp.com/attachments/814658514328354867/838078660215832586/unknown.png)
 
 #### Author and file type
@@ -167,15 +170,15 @@ In `Launcher.tscn` edit the parameters of `Carousel`. The covers are tinted the 
 
 #### Moving the carousel
 
-In `Launcher.tscn` change the `Stream` parameter in the `Move` node.
+In `Launcher.tscn` change the `Stream` parameter in the `Move` node to a .wav file of your choice.
 
 #### Launching a game
 
-In `Game.tscn` change the `Stream ` parameter in the `Success` node.
+In `Game.tscn` change the `Stream ` parameter in the `Success` node to a .wav file of your choice.
 
 #### Nothing to launch
 
-In `Game.tscn` change the `Stream` parameter in the `Failure` node.
+In `Game.tscn` change the `Stream` parameter in the `Failure` node to a .wav file of your choice.
 
 -------
 
