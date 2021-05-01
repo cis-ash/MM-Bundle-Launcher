@@ -188,12 +188,12 @@ In `Game.tscn` change the `Stream` parameter in the `Failure` node to a .wav fil
 
 ## Inner workings
 
-| Game Type               | What it does                                                 |
-| ----------------------- | ------------------------------------------------------------ |
-| no file                 | does nothing and plays a disappointed sound                  |
-| windows exe             | Asks OS to run the given file with no arguments<br />OS.execute(file_to_run, [], false) |
-| link/pdf/html/other fil | Sends a URI to open to the OS<br />OS.shell_open(file_to_run) |
-| gameboy rom             | Asks OS to run the emulator with the provided ROM as an argument<br />OS.execute("GB Emulator\\bgb.exe", ["-rom", file_to_run], false) |
+| Game Type                | What it does                                                 |
+| ------------------------ | ------------------------------------------------------------ |
+| no file                  | does nothing and plays a disappointed sound                  |
+| windows exe              | Asks OS to run the given file with no arguments<br />OS.execute(file_to_run, [], false) |
+| link/pdf/html/other file | Sends a URI to open to the OS<br />OS.shell_open(file_to_run) |
+| gameboy rom              | Asks OS to run the emulator with the provided ROM as an argument<br />OS.execute("GB Emulator\\bgb.exe", ["-rom", file_to_run], false) |
 
 
 
