@@ -87,6 +87,22 @@ The order in which they are shown in the scene hierarchy is important and determ
 
 ### Variables
 
+For each cover you want to be presented in the launcher you will need to fill out the information displayed to the user.
+
+- [ ] Write the name of the game in `Game Name`
+- [ ] Write the name of the author in `Author Name`, the launcher will then display "by [author name you wrote]"
+- [ ]  Add the images you want to use as covers to the project folder.
+- [ ] Drag and drop the image file you want to be the cover from `File System` window into the `Cover` field.
+- [ ] If the image is not upright and you want to change that select the appropriate option from the `Rotate` dropdown menu.
+- [ ] Select the appropriate `Game Type` from the dropdown, this will determine how the next variable is treated. More about what each game type means can be found below.
+- [ ] Input the path to the file you want to execute/open in the `File To Run` field. More info on how this data should be formatted can be found below.
+
+Keep in mind that changing these variables will not cause any immediate change in what you see in the editor. You need to run the project to see how it will look.
+
+
+
+Breakdown of what each variable will change and how it will look for the user.
+
 ![](https://cdn.discordapp.com/attachments/814658514328354867/838066393097830490/unknown.png)
 
 | Variable Name | What it do                                                   |
@@ -97,8 +113,6 @@ The order in which they are shown in the scene hierarchy is important and determ
 | Rotate        | If using zine pages as covers - some of them can be intended to be read in landscape mode. <br />This dropdown eliminates the need to open an image editor. <br />[Handy free tool to convert PDF pages to PNGs in bulk](https://pdf2png.com/). |
 | Game Type     | Changes the third line displayed above the cover as well as the way the launcher treats the file provided in `File To Run`.<br />How to change these will be described in detail later. |
 | File To Run   | Relative path from the compiled .exe of the launcher to the file you intend this cover to launch. <br />Details below. |
-
-Keep in mind that changing these variables will not cause any immediate change in what you see in the editor. You need to run the project to see how it will look.
 
 ### File Paths and how to use them
 
