@@ -6,17 +6,19 @@ This Godot 3 project is an easy-to-edit jumping off point for making a launcher 
 
 The MM Bundle Launcher configured to run windows games from [Indiepocalypse Zine issue #1](https://pizzapranks.itch.io/indiepocalypse-1).
 
+(insert video here)
+
 The MM Bundle Launcher running the example provided in the repo. See it for yourself by cloning the repo and running `Launcher.exe`in the `Launcher Example` folder.
+
+(insert video here)
 
 ## What can it do?
 
 It **can**:
 
 - launch exe files
-- open pdf files
-- open html files and play html5 games
-- play videos
-- emulate Gameboy ROMs (other consoles not included but should be easy enough to add)
+- open files using default app
+- run an emulator with the game already loaded and ready to play
 - open folders in file explorer
 - be used with a controller
 
@@ -53,10 +55,9 @@ Skip this section if you have experience working with Godot and have the latest 
 
 1. Download the [latest stable release of Godot Engine](https://godotengine.org/download)(33.8MB). Get the standard version, NOT Mono.
 2. Download the source files for this project(1.5MB) and if you feel like it - the example(80.3MB).
-3. Download [standard export templates](https://godotengine.org/download)(488MB) (once on the page - scroll down). Keep in mind you don't need these to right away, only for the later testing/exporting phase.
 4. Run Godot, on the right hand side click `Scan` and select the `Launcher Source` folder from the project source files that you downloaded. If everything went right you should see a new project appear.
 5. Open the `Launcher` project. It should load into `Launcher.tscn` by default. This is how it should look if everything went right (except your interface will be dark gray/blue).![](https://cdn.discordapp.com/attachments/814658514328354867/837881527731879956/unknown.png) 
-6. Look at the top-left side of the screen. Under `Editor > Manage Export Templates` click `Install from file` and choose the file with export templates you downloaded earlier.
+6. Look at the top-left side of the screen. Under `Editor > Manage Export Templates`and download the export templates for the current version (this might take a while)
 
 Extra info if you are new to Godot:
 
@@ -65,6 +66,10 @@ Extra info if you are new to Godot:
 * You can drag and drop files from the `FileSystem` window on the bottom-right into the scene as well as into relevant fields in the `Inspector` window.
 
 If everything went right you should be all set up now!
+
+### Exporting the launcher
+
+To test if it is able to launch the files that you specified and prepare the launcher for release and distribution you will need to export it. To do it, in the top right go to `Project > Export...`. Select the preset that is already there and click `Export Project`. It should be done in a second or two.
 
 ## Adding your games to the launcher
 
@@ -89,7 +94,7 @@ The order in which they are shown in the scene hierarchy is important and determ
 | Game Name     | What is displayed in a large bold font over the cover when it is in front of the user |
 | Author Name   | Second line displayed above cover is "by `Author Name`"      |
 | Cover         | Image used as game cover. <br />Can be of any resolution and aspect ratio, the launcher will scale it to look reasonable.<br />Most formats are supported, [details can be found here](https://docs.godotengine.org/en/stable/getting_started/workflow/assets/importing_images.html). |
-| Rotate        | If using zine pages as covers - some of them can be intended to be read in landscape mode. <br />This dropdown eliminates the need to open an image editor. <br />[This can be used to convert PDFs into PNGs](https://pdf2png.com/). |
+| Rotate        | If using zine pages as covers - some of them can be intended to be read in landscape mode. <br />This dropdown eliminates the need to open an image editor. <br />[Handy free tool to convert PDF pages to PNGs in bulk](https://pdf2png.com/). |
 | Game Type     | Changes the third line displayed above the cover as well as the way the launcher treats the file provided in `File To Run`.<br />How to change these will be described in detail later. |
 | File To Run   | Relative path from the compiled .exe of the launcher to the file you intend this cover to launch. <br />Details below. |
 
@@ -155,6 +160,9 @@ In `Launcher.tscn` edit the parameters of the `Controls` node.
 #### Background
 
 In `Launcher.tscn` edit the children of `Background`. You can use sprites or a tiled TextureRect node. Simple effects can be applied to it using ColorRect nodes/other images with CanvasItemMaterial set to different mixing modes. If you already know how to use Godot I'm sure you can come up with some fun shaders or animations to put there.
+
+**IMPORTANT DETAIL**
+Project is currently configured in a way where the users with any monitor size and aspect ratio will see the same amount of the scene vertically. If the user has a 4:3 aspect ratio they will not see the sides of what is in the thin blue border. If they have an ultra wide monitor they will see beyond the thin blue border. Because of this please make sure to add a bit of padding around what the camera would normally see.
 
 #### Quit Launcher Pop-Up
 
