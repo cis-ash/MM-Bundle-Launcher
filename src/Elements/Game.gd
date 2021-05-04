@@ -55,6 +55,8 @@ func _ready():
 	var biggest_side = max(Cover.get_size().x, Cover.get_size().y)
 	var adjust_scale = 2200/biggest_side
 	$visuals/page.scale = Vector2.ONE*0.2*adjust_scale
+	
+	
 	pass
 
 
@@ -86,6 +88,10 @@ func _process(delta):
 			info_anim_scale = lerp(info_anim_scale, 0, 10*delta)
 		$TextInfo.scale = info_anim_scale*Vector2.ONE
 		pass
+		
+		if not was_prepared and prepared:
+			$Select.play()
+		was_prepared = prepared
 	pass
 
 func play():

@@ -21,6 +21,8 @@ export (float) var max_scale;
 # play when a different cover is selected
 export (NodePath) var move_sound;
 export (NodePath) var exit_popup;
+export (NodePath) var exit_sound;
+export (NodePath) var exit_close;
 
 # tint of cover when far away, close tint is always white
 export (Color) var far_tint;
@@ -45,6 +47,7 @@ func _process(delta):
 				get_tree().quit()
 			if Input.is_action_just_pressed("ui_cancel"):
 				exiting = false
+				get_node(exit_close).play()
 		else:
 			# if quit game popup is not visible - act as usual
 			if Input.is_action_just_pressed("ui_left"):
@@ -74,6 +77,7 @@ func _process(delta):
 					games[selected_game].prepared = false;
 				else:
 					# if it was already normal - ask the player if they want to quit
+					get_node(exit_sound).play()
 					exiting = true;
 		
 		
