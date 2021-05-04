@@ -1,5 +1,9 @@
 # Mixed-Media-Bundle-Launcher
 
+[itch page](https://ash-k.itch.io/mm-bundle-launcher)
+
+[github page](https://github.com/cis-ash/MM-Bundle-Launcher)
+
 ## What is it?
 
 This Godot 3 project is an easy-to-edit jumping off point for making a launcher to make your game/file/whatever bundles look more professional. As the name implies it can launch pretty much anything you throw at it, all in one consistent looking animated package.
