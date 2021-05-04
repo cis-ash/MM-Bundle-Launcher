@@ -202,6 +202,10 @@ In `Launcher.tscn` change the `Straem parameter` in the `Music` node to a .ogg f
 
 In `Launcher.tscn` change the `Stream` parameter in the `Move` node to a .wav file of your choice.
 
+#### Open/Close exit popup
+
+In `Launcher.tscn` change the `Stream` parameters in the `PopupSound` and `PopupClose` nodes to a .wav file of your choice.
+
 #### Launching a game
 
 In `Game.tscn` change the `Stream ` parameter in the `Success` node to a .wav file of your choice.
@@ -209,6 +213,10 @@ In `Game.tscn` change the `Stream ` parameter in the `Success` node to a .wav fi
 #### Nothing to launch
 
 In `Game.tscn` change the `Stream` parameter in the `Failure` node to a .wav file of your choice.
+
+#### Select game
+
+In `Game.tscn` change the `Stream` parameter in the `Select` node to a .wav file of your choice.
 
 -------
 
