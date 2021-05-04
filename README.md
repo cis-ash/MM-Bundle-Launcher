@@ -8,13 +8,19 @@
 
 This Godot 3 project is an easy-to-edit jumping off point for making a launcher to make your game/file/whatever bundles look more professional. As the name implies it can launch pretty much anything you throw at it, all in one consistent looking animated package.
 
+
+
 The MM Bundle Launcher configured to run windows games from [Indiepocalypse Zine issue #1](https://pizzapranks.itch.io/indiepocalypse-1).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PsbcywH_quk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/PsbcywH_quk
+
+
 
 The MM Bundle Launcher running the example project. See it for yourself by going to the [projects itch.io page](https://ash-k.itch.io/mm-bundle-launcher) and downloading   `compiled & assembled example project` .
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4GafFLNjFHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/4GafFLNjFHc
+
+
 
 ## What can it do?
 
