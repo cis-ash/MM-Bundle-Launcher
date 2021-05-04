@@ -27,7 +27,7 @@ At the moment it **can't**:
 - have multiple files per one cover on the carousel
 - have submenus
 - show files in a non carousel view 
-- emulate other consoles without prior modifications
+- emulate non Gameboy consoles without prior modifications
 
 Things listed above can be added or changed if you are ready to tweak the source code a bit.
 
