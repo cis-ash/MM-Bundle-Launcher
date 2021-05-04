@@ -41,6 +41,16 @@ font_data = ExtResource( 8 )
 
 [node name="Launcher" type="Node2D"]
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -13.127
+autoplay = true
+script = ExtResource( 11 )
+
+[node name="Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -9.093
+
 [node name="Background" type="Node2D" parent="."]
 position = Vector2( -109.407, -425.736 )
 z_index = -2
@@ -70,10 +80,6 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
 current = true
-
-[node name="Move" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
-volume_db = -9.093
 
 [node name="Carousel" type="YSort" parent="."]
 position = Vector2( 960, 675 )
@@ -230,9 +236,3 @@ Esc
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -13.127
-autoplay = true
-script = ExtResource( 11 )

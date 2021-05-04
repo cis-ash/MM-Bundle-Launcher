@@ -6,11 +6,11 @@ This Godot 3 project is an easy-to-edit jumping off point for making a launcher 
 
 The MM Bundle Launcher configured to run windows games from [Indiepocalypse Zine issue #1](https://pizzapranks.itch.io/indiepocalypse-1).
 
-(insert video here)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PsbcywH_quk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The MM Bundle Launcher running the example provided in the repo. See it for yourself by cloning the repo and running `Launcher.exe`in the `Launcher Example` folder.
+The MM Bundle Launcher running the example project. See it for yourself by going to the [projects itch.io page](https://ash-k.itch.io/mm-bundle-launcher) and downloading   `compiled & assembled example project` .
 
-(insert video here)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4GafFLNjFHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## What can it do?
 
@@ -31,23 +31,17 @@ At the moment it **can't**:
 
 Things listed above can be added or changed if you are ready to tweak the source code a bit.
 
-## FAQ
-
-Q: Some/all projects I want to run were made in an engine other than Godot, will it still run?
-
-A: Yes, absolutely.
-
-Q: Do I have to know how to code to use this with my project?
-
-A: Absolutely not, you can change it to fit your project by just drag&dropping files.
-
 -------
 
 # Documentation and Instructions
 
 [TOC]
 
-Last edited on May 1st 2021.
+This documentation accurately describes the project as it was on 4th of May 2021.
+
+If you are planning to contribute to the project please document the features you add here.
+
+If you believe the tutorial below to be not good and believe you can improve on it - please do so by submitting a pull request on the git repo.
 
 ## Set up the environment
 
@@ -55,7 +49,7 @@ Skip this section if you have experience working with Godot and have the latest 
 
 1. Download the [latest stable release of Godot Engine](https://godotengine.org/download)(33.8MB). Get the standard version, NOT Mono.
 2. Download the source files for this project(1.5MB) and if you feel like it - the example(80.3MB).
-4. Run Godot, on the right hand side click `Scan` and select the `Launcher Source` folder from the project source files that you downloaded. If everything went right you should see a new project appear.
+4. Run Godot, on the right hand side click `Scan` and select the `src` folder you downloaded. If everything went right you should see a new project appear.
 5. Open the `Launcher` project. It should load into `Launcher.tscn` by default. This is how it should look if everything went right (except your interface will be dark gray/blue).![](https://cdn.discordapp.com/attachments/814658514328354867/837881527731879956/unknown.png) 
 6. Look at the top-left side of the screen. Under `Editor > Manage Export Templates`and download the export templates for the current version (this might take a while)
 
@@ -89,13 +83,13 @@ The order in which they are shown in the scene hierarchy is important and determ
 
 For each cover you want to be presented in the launcher you will need to fill out the information displayed to the user.
 
-- [ ] Write the name of the game in `Game Name`
-- [ ] Write the name of the author in `Author Name`, the launcher will then display "by [author name you wrote]"
-- [ ]  Add the images you want to use as covers to the project folder.
-- [ ] Drag and drop the image file you want to be the cover from `File System` window into the `Cover` field.
-- [ ] If the image is not upright and you want to change that select the appropriate option from the `Rotate` dropdown menu.
-- [ ] Select the appropriate `Game Type` from the dropdown, this will determine how the next variable is treated. More about what each game type means can be found below.
-- [ ] Input the path to the file you want to execute/open in the `File To Run` field. More info on how this data should be formatted can be found below.
+- Write the name of the game in `Game Name`
+- Write the name of the author in `Author Name`, the launcher will then display "by [author name you wrote]"
+- Add the images you want to use as covers to the project folder.
+- Drag and drop the image file you want to be the cover from `File System` window into the `Cover` field.
+- If the image is not upright and you want to change that select the appropriate option from the `Rotate` dropdown menu.
+- Select the appropriate `Game Type` from the dropdown, this will determine how the next variable is treated. More about what each game type means can be found below.
+- Input the path to the file you want to execute/open in the `File To Run` field. More info on how this data should be formatted can be found below.
 
 Keep in mind that changing these variables will not cause any immediate change in what you see in the editor. You need to run the project to see how it will look.
 
@@ -190,6 +184,10 @@ In `Launcher.tscn` edit the parameters of `Carousel`. The covers are tinted the 
 
 ### Sounds
 
+#### Background music
+
+In `Launcher.tscn` change the `Straem parameter` in the `Music` node to a .ogg file of your choice.
+
 #### Moving the carousel
 
 In `Launcher.tscn` change the `Stream` parameter in the `Move` node to a .wav file of your choice.
@@ -217,7 +215,7 @@ In `Game.tscn` change the `Stream` parameter in the `Failure` node to a .wav fil
 | link/pdf/html/other file | Sends a URI to open to the OS<br />OS.shell_open(file_to_run) |
 | gameboy rom              | Asks OS to run the emulator with the provided ROM as an argument<br />OS.execute("GB Emulator\\bgb.exe", ["-rom", file_to_run], false) |
 
-
+> current implementation of console emulation is not good, this will be fixed in the nearest future.
 
 ## Emulating other consoles
 
