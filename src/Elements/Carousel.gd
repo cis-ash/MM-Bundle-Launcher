@@ -23,12 +23,14 @@ export (NodePath) var move_sound;
 export (NodePath) var exit_popup;
 export (NodePath) var exit_sound;
 export (NodePath) var exit_close;
+export (NodePath) var description_path;
 
 # tint of cover when far away, close tint is always white
 export (Color) var far_tint;
 # tint of cover when it is not selected, is multiplied with far tint
 export (Color) var unselected_tint;
 
+onready var description = get_node(description_path);
 
 func _ready():
 	# get games based on current children nodes
@@ -51,9 +53,11 @@ func _process(delta):
 		else:
 			# if quit game popup is not visible - act as usual
 			if Input.is_action_just_pressed("ui_left"):
+				description.hide_description()
 				selected_game += 1;
 				get_node(move_sound).play()
 			if Input.is_action_just_pressed("ui_right"):
+				description.hide_description()
 				selected_game -= 1;
 				get_node(move_sound).play()
 			
@@ -68,17 +72,21 @@ func _process(delta):
 				if games[selected_game].prepared:
 					# if cover already taking up entire screen - launch it
 					games[selected_game].play()
+					description.hide_description()
 				else:
 					# expands the selected cover to fill entire screen if it was not
 					games[selected_game].prepared = true;
+					description.update_description(games[selected_game].description)
 			if Input.is_action_just_pressed("ui_cancel"):
 				if games[selected_game].prepared:
 					# if cover was taking up entire screen - return it to normal
 					games[selected_game].prepared = false;
+					description.hide_description()
 				else:
 					# if it was already normal - ask the player if they want to quit
 					get_node(exit_sound).play()
 					exiting = true;
+					description.hide_description()
 		
 		
 		# makes the visual rotation of the carousel lag behind the selection

@@ -6,6 +6,7 @@
 extends Node2D
 export (String) var game_name
 export (String) var author_name
+export (String, MULTILINE) var description
 export (Texture) var Cover;
 export (int, "keep rotation", "rotate clockwise", "rotate counter clockwise") var rotate
 export (int, "no file", "windows exe", "link/pdf/html/other file", "gameboy rom") var game_type

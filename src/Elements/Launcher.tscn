@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Elements/Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elements/Carousel.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Elements/music.gd" type="Script" id=11]
 [ext_resource path="res://Elements/UI Sounds/escape0.wav" type="AudioStream" id=12]
 [ext_resource path="res://Elements/UI Sounds/escape1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Elements/Description.gd" type="Script" id=14]
 [ext_resource path="res://Elements/Instructions.gd" type="Script" id=16]
 [ext_resource path="res://Elements/UI Sounds/cursor_0.wav" type="AudioStream" id=17]
 [ext_resource path="res://Placeholder Assets/Images/background.png" type="Texture" id=18]
@@ -92,12 +93,14 @@ move_sound = NodePath("../Move")
 exit_popup = NodePath("../ExitPopup")
 exit_sound = NodePath("../ExitPopup/PopupSound")
 exit_close = NodePath("../ExitPopup/PopupClose")
+description_path = NodePath("../Description")
 far_tint = Color( 0.643137, 0.572549, 0.717647, 1 )
 unselected_tint = Color( 0.913725, 0.831373, 1, 1 )
 
 [node name="Game1" parent="Carousel" instance=ExtResource( 1 )]
 game_name = "Square Pdf"
 author_name = "square lover"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
 Cover = ExtResource( 3 )
 game_type = 2
 file_to_run = "example pdf file.pdf"
@@ -105,11 +108,13 @@ file_to_run = "example pdf file.pdf"
 [node name="Game2" parent="Carousel" instance=ExtResource( 1 )]
 game_name = "Tall nothing"
 author_name = "tallboi"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque. Turpis massa tincidunt dui ut ornare lectus sit amet est. "
 Cover = ExtResource( 4 )
 
 [node name="Game3" parent="Carousel" instance=ExtResource( 1 )]
 game_name = "low res exe"
 author_name = "pixelface"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae."
 Cover = ExtResource( 5 )
 game_type = 1
 file_to_run = "A folder\\\\Folder inside a folder\\\\TEXTREME.exe"
@@ -117,6 +122,7 @@ file_to_run = "A folder\\\\Folder inside a folder\\\\TEXTREME.exe"
 [node name="Game4" parent="Carousel" instance=ExtResource( 1 )]
 game_name = "wacky ROM"
 author_name = "old school cool"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet nibh praesent tristique magna sit. Venenatis cras sed felis eget velit aliquet sagittis. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Pharetra sit amet aliquam id diam. Sed arcu non odio euismod lacinia at quis."
 Cover = ExtResource( 6 )
 game_type = 3
 file_to_run = "A folder\\\\Folder inside a folder\\\\yo-grl\\\\yo-grl.gb"
@@ -124,15 +130,16 @@ file_to_run = "A folder\\\\Folder inside a folder\\\\yo-grl\\\\yo-grl.gb"
 [node name="Game5" parent="Carousel" instance=ExtResource( 1 )]
 game_name = "wide video"
 author_name = "wise wide man"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor at auctor urna nunc id cursus. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Augue ut lectus arcu bibendum. Sit amet consectetur adipiscing elit pellentesque habitant morbi. "
 Cover = ExtResource( 7 )
 game_type = 2
 file_to_run = "A folder\\\\example_video.mp4"
 
 [node name="Controls" type="Label" parent="."]
 margin_left = 21.3816
-margin_top = 19.5998
-margin_right = 561.382
-margin_bottom = 574.6
+margin_top = 20.5998
+margin_right = 621.382
+margin_bottom = 863.6
 rect_scale = Vector2( 1, 0.998985 )
 custom_fonts/font = SubResource( 2 )
 text = "Select game with:
@@ -162,6 +169,38 @@ __meta__ = {
 stream = ExtResource( 17 )
 volume_db = -8.57
 pitch_scale = 2.07
+
+[node name="Description" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1395.0
+margin_top = 21.0
+margin_right = 1899.0
+margin_bottom = 1005.0
+rect_scale = Vector2( 1, 0.998985 )
+custom_fonts/font = SubResource( 2 )
+text = "loootse ooarestmmtmtyuaorseitmaeisrtneairsnteianseitnaesrntotnaerslntotuearsoteanoysuetnaorsent
+Open and launch game with:
+Space
+Enter
+(A)
+
+Go back or quit launcher with:
+Esc
+(B)
+
+Hide this information with:
+Tab
+(Y)
+"
+align = 2
+autowrap = true
+percent_visible = 0.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ExitPopup" type="ColorRect" parent="."]
 visible = false
